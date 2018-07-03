@@ -22,7 +22,7 @@ class Student
   def save
     run_sql('INSERT INTO students (name, grade) VALUES (?, ?)',
     self.name, self.grade)
-    run_sql('SELECT MAX(id) from students').flatten[0]
+    $id = run_sql('SELECT MAX(id) from students').flatten[0]
   end
 
   def self.create(hash)
