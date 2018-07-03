@@ -15,13 +15,10 @@ class Student
     sql = <<-SQL
     CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT, grade INTEGER)
     SQL
-    run_sql(sql)
+    run_sql('CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT, grade INTEGER)')
   end
 
   def self.drop_table
-    sql = <<-SQL
-    DROP TABLE students
-    SQL
     run_sql('DROP TABLE students')
   end
 
