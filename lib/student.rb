@@ -26,11 +26,7 @@ class Student
   end
 
   def save
-    # sql = <<-SQL
-    # INSERT INTO students (name, grade) VALUES (?, ?)
-    # SQL
-    run_sql(
-    'INSERT INTO students (name, grade) VALUES (?, ?)',
+    run_sql('INSERT INTO students (name, grade) VALUES (?, ?)',
     self.name, self.grade)
     run_sql('SELECT MAX(id) from students').flatten[0]
   end
