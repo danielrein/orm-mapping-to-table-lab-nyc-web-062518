@@ -29,8 +29,8 @@ class Student
     sql = <<-SQL
     INSERT INTO students (name, grade) VALUES (?, ?)
     SQL
-    DB[:conn].execute(sql, self.name, self.grade)
-    @id = DB[:conn].execute('SELECT MAX(id) from students').flatten[0]
+    run_sql(sql, self.name, self.grade)
+    run_sql('SELECT MAX(id) from students').flatten[0]
   end
 
   def self.create(hash)
