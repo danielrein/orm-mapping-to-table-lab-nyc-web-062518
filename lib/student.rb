@@ -22,7 +22,7 @@ class Student
     sql = <<-SQL
     DROP TABLE students
     SQL
-    run_sql(sql)
+    run_sql('DROP TABLE students')
   end
 
   def save
